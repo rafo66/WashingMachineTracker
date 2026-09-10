@@ -10,7 +10,7 @@ Dans une résidence étudiante équipée de 4 machines à laver et 4 sèche-ling
 
 ## Comment ça marche
 
-![Architecture WashingMachineTracker](./assets/architecture.png)
+![Architecture WashingMachineTracker](./architecture.png)
 
 Chaque boîtier détecte les vibrations de sa machine et transmet la donnée au Raspberry Pi central, qui la relaie au serveur de production. Le site affiche l'état (libre / en cours) de chaque machine ainsi que son historique de vibration.
 
