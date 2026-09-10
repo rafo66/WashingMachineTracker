@@ -1,0 +1,237 @@
+:root {
+  --bg: #f3f4f1;
+  --panel: #ffffff;
+  --ink: #1f2924;
+  --ink-soft: #5c6b64;
+  --line: #dde1dc;
+
+  --free: #2f8f5b;
+  --free-bg: #e8f5ee;
+  --busy: #b0522f;
+  --busy-bg: #fbece4;
+
+  --accent: #3c6e66;
+
+  font-size: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", Roboto, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  padding: 2.5rem 1.5rem 1.25rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* --- Grille machines --- */
+
+.machines-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2.5rem;
+}
+
+.machine-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.9rem;
+}
+
+.machine-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem 0.75rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.machine-card.is-busy {
+  border-color: var(--busy);
+}
+
+.machine-card.is-free {
+  border-color: var(--free);
+}
+
+.machine-icon {
+  width: 42px;
+  height: 42px;
+  color: var(--ink-soft);
+}
+
+.machine-card.is-busy .machine-icon { color: var(--busy); }
+.machine-card.is-free .machine-icon { color: var(--free); }
+
+.machine-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.machine-status {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.machine-status.is-free {
+  background: var(--free-bg);
+  color: var(--free);
+}
+
+.machine-status.is-busy {
+  background: var(--busy-bg);
+  color: var(--busy);
+}
+
+.machine-duration {
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+}
+
+/* --- Historique / graph --- */
+
+.history-section {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.history-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.history-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.last-update {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.history-body {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.chart-wrap {
+  flex: 1 1 480px;
+  min-width: 280px;
+}
+
+#chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.signal-picker {
+  flex: 0 0 190px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.signal-picker legend {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: none;
+  padding: 0 0 0.5rem;
+}
+
+.signal-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.signal-option input {
+  accent-color: var(--accent);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.signal-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+footer {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  padding: 1rem 1.5rem 2rem;
+}
+
+footer code {
+  background: var(--line);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .machine-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .history-body {
+    flex-direction: column;
+  }
+  .signal-picker {
+    flex-basis: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

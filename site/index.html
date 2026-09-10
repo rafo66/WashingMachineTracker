@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WashingMachineTracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header>
+  <h1>WashingMachineTracker</h1>
+  <p class="subtitle">État des machines de la buanderie</p>
+</header>
+
+<main>
+
+  <section class="machines-grid" aria-label="État des machines">
+    <div class="machine-row" id="row-laveurs">
+      <!-- Cartes machines à laver générées en JS -->
+    </div>
+    <div class="machine-row" id="row-sechoirs">
+      <!-- Cartes sèche-linge générées en JS -->
+    </div>
+  </section>
+
+  <section class="history-section">
+    <div class="history-header">
+      <h2>Historique des vibrations</h2>
+      <span class="last-update" id="last-update">—</span>
+    </div>
+
+    <div class="history-body">
+      <div class="chart-wrap">
+        <canvas id="chart" width="900" height="360"></canvas>
+      </div>
+
+      <fieldset class="signal-picker" id="signal-picker">
+        <legend>Machines affichées</legend>
+        <!-- Checkboxes générées en JS -->
+      </fieldset>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Proof of concept — données lues depuis <code>data/</code></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
