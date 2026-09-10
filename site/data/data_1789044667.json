@@ -1,0 +1,14 @@
+{
+  "label": "IoT_WashingMachineTracker",
+  "time_sent": "2026-09-10T12:51:07Z",
+  "locals": {
+    "machine_laver_1": 0.04,
+    "machine_laver_2": 0.04,
+    "machine_laver_3": 0.04,
+    "machine_laver_4": 0.04,
+    "machine_seche_linge_1": 0.04,
+    "machine_seche_linge_2": 0.04,
+    "machine_seche_linge_3": 0.04,
+    "machine_seche_linge_4": 0.04
+  }
+}
