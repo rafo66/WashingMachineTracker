@@ -10,12 +10,7 @@ Dans une résidence étudiante équipée de 4 machines à laver et 4 sèche-ling
 
 ## Comment ça marche
 
-```
-8 boîtiers ESP32 + accéléromètre   →   Raspberry Pi   →   Serveur de prod   →   Site public
-   (1 par machine, sur piles)          (agrège les 8      (historique +        (consulté par
-        via ESP-NOW                     valeurs, POST       site)                les résidents)
-                                         1x/min)
-```
+![Architecture WashingMachineTracker](./assets/architecture.png)
 
 Chaque boîtier détecte les vibrations de sa machine et transmet la donnée au Raspberry Pi central, qui la relaie au serveur de production. Le site affiche l'état (libre / en cours) de chaque machine ainsi que son historique de vibration.
 
